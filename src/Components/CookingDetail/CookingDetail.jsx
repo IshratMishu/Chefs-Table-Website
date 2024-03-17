@@ -7,18 +7,18 @@ const CookingDetail = ({ handlePreparing, cookingDetail, idx }) => {
 
 
     return (
-        <div className='grid lg:grid-flow-col grid-cols-1'>
+        <div className='grid lg:grid-flow-col grid-cols-1 space-y-4'>
             <table className='font-firaSans font-medium text-[#878787]'>
-                <tbody>
-                    <tr className='flex gap-5'>
-                        <td>{idx + 1}</td>
-                        <td>{recipe_name}</td>
-                        <td>{preparing_time}</td>
-                        <td>{calories}</td>
+                <tbody className='mb-3'>
+                    <tr className='flex gap-5 space-y-4 items-center'>
+                        <td className='text-black'>{idx + 1}</td>
+                        <td className='w-1/4'>{recipe_name}</td>
+                        <td className='w-1/4'>{preparing_time}</td>
+                        <td className='w-1/4'>{calories}</td>
                     </tr>
                 </tbody>
             </table>
-            <button onClick={() => handlePreparing(cookingDetail.recipe_id)} className='bg-[#0BE58A] px-2 rounded-xl'>Preparing</button>
+            <button onClick={() => handlePreparing(cookingDetail.recipe_id)} className='bg-[#0BE58A] px-2 rounded-xl text-black font-semibold font-lexend ml-2'>Preparing</button>
         </div>
     );
 };

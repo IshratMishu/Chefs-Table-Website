@@ -13,26 +13,22 @@ const CookingDetails = ({ cookingDetails, handlePreparing }) => {
 
     return (
         <div className="md:w-2/5 p-5 border-2">
-            <h2 className='font-lexend font-semibold text-2xl text-center'>Want to cook: {cookingDetails.length}</h2>
+            <h2 className='font-lexend font-semibold text-2xl text-center mb-2'>Want to cook: {cookingDetails.length}</h2>
             <hr />
-            <table className='font-firaSans font-medium text-[#878787]'> 
-            <tbody>
-            <tr className='flex'>
-                <td></td>
-                <td>Name</td>
-                <tr className='flex'>
-                <td>Time</td>
-                <td>Calories</td>
-                </tr>
-                <td></td>
-            </tr>
-            </tbody>
-        </table>
+            <table className='font-firaSans font-medium w-full mt-2'>
+                <tbody className='flex justify-between'>
+                        <td className='w-1/12'></td>
+                        <td className='w-1/4'>Name</td>
+                        <td className='w-1/4'>Time</td>
+                        <td className='w-1/4'>Calories</td>
+                        <td className='w-1/4'></td>
+                </tbody>
+            </table>
             {
-                cookingDetails.map((cookingDetail, idx)=> <CookingDetail key={idx} idx={idx} cookingDetail={cookingDetail} handlePreparing={handlePreparing}></CookingDetail>)
+                cookingDetails.map((cookingDetail, idx) => <CookingDetail key={idx} idx={idx} cookingDetail={cookingDetail} handlePreparing={handlePreparing}></CookingDetail>)
             }
 
-<CurrentCooking  handlePreparing={handlePreparing}></CurrentCooking>
+            <CurrentCooking handlePreparing={handlePreparing}></CurrentCooking>
             {/* <h2 className='font-lexend font-semibold text-2xl text-center'>Currently cooking: 0</h2>
             <hr />
             <table className='font-firaSans font-medium text-[#878787]'> 
@@ -48,8 +44,8 @@ const CookingDetails = ({ cookingDetails, handlePreparing }) => {
             </tr>
             </tbody>
         </table> */}
-        
-        </div>  
+
+        </div>
     );
 };
 CookingDetails.propTypes = {

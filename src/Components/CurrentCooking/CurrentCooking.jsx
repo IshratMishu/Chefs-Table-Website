@@ -13,21 +13,16 @@ const CurrentCooking = ({currentCooking}) => {
     // }
     return (
         <div>
-            <h2 className='font-lexend font-semibold text-2xl text-center'>Currently cooking:{currentCooking} </h2>
+            <h2 className='font-lexend font-semibold text-2xl text-center mt-5 mb-2'>Currently cooking:{currentCooking} </h2>
             <hr />
-            <table className='font-firaSans font-medium text-[#878787]'> 
-            <tbody>
-            <tr className='flex'>
-                <td></td>
-                <td>Name</td>
-                <tr className='flex'>
-                <td>Time</td>
-                <td>Calories</td>
-                </tr>
-                <td></td>
-            </tr>       
-            </tbody>
-        </table>
+            <table className='font-firaSans font-medium w-full mt-2'>
+                <tbody className='flex justify-between'>  
+                         <td></td>        
+                        <td className='w-1/4'>Name</td>
+                        <td className='w-1/4'>Time</td>
+                        <td className='w-1/4'>Calories</td>              
+                </tbody>
+            </table>
         </div>
     );
 };
