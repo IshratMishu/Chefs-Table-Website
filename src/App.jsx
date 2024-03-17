@@ -6,6 +6,7 @@ import Recipes from './Components/Recipes/Recipes'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Banner from './Components/Banner/Banner'
+import RecipeTitle from './Components/RecipeTitle/RecipeTitle'
 
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
     <>
       <Navbar></Navbar>
       <Banner></Banner>
+      <RecipeTitle></RecipeTitle>
       <div className='md:flex gap-10'>
         <Recipes handleAddToCook={handleAddToCook}></Recipes>
         <CookingDetails cookingDetails={cookingDetails} handlePreparing={handlePreparing} ></CookingDetails>
