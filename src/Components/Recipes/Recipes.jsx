@@ -11,9 +11,9 @@ const Recipes = ({handleAddToCook}) => {
             .then(res => res.json())
             .then(data => setRecipes(data))
     }, [])
-    
+
     return (
-        <div className="md:w-3/5 grid grid-cols-1 lg:grid-cols-2 gap-5">
+        <div className=" grid grid-cols-1 lg:grid-cols-2 gap-5">
             {
                 recipes.map(recipe => <Recipe 
                     key={recipe.recipe_id} 
@@ -25,7 +25,8 @@ const Recipes = ({handleAddToCook}) => {
 };
 
 Recipes.propTypes = {
-    handleAddToCook: PropTypes.func.isRequired
+    handleAddToCook: PropTypes.func.isRequired,
+    handleCurrentCook: PropTypes.func
 }
 
 export default Recipes;

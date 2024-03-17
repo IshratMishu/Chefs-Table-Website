@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 
-const CookingDetail = ({ handlePreparing, cookingDetail, idx }) => {
+const CookingDetail = ({handlePreparing, cookingDetail, idx, handleCurrentCook}) => {
     const { recipe_name, preparing_time, calories } = cookingDetail;
 
 
@@ -17,7 +17,11 @@ const CookingDetail = ({ handlePreparing, cookingDetail, idx }) => {
                     </tr>
                 </tbody>
             </table>
-            <button onClick={() => handlePreparing(cookingDetail.recipe_id)} className='bg-[#0BE58A] px-2 rounded-xl text-black font-semibold font-lexend ml-2'>Preparing</button>
+            <button onClick={()=>{
+                handlePreparing(cookingDetail.recipe_id)
+                handleCurrentCook(cookingDetail.recipe_id)
+            }}  
+            className='bg-[#0BE58A] px-2 rounded-xl text-black font-semibold font-lexend ml-2'>Preparing</button>
         </div>
     );
 };
@@ -25,7 +29,8 @@ const CookingDetail = ({ handlePreparing, cookingDetail, idx }) => {
 CookingDetail.propTypes = {
     cookingDetail: PropTypes.object.isRequired,
     idx: PropTypes.number,
-    handlePreparing: PropTypes.func
+    handlePreparing: PropTypes.func,
+    handleCurrentCook: PropTypes.func  
 }
 
 export default CookingDetail;

@@ -7,11 +7,13 @@ import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Banner from './Components/Banner/Banner'
 import RecipeTitle from './Components/RecipeTitle/RecipeTitle'
+import CurrentCooking from './Components/CurrentCooking/CurrentCooking'
 
 
 function App() {
   const [cookingDetails, setCookingDetails] = useState([]);
-  const [currentCookings, setCurrentCooking] =useState([]);
+  const [currentCooking, setCurrentCooking] =useState([]);
+  
 
 
   const handleAddToCook = recipe => {
@@ -25,25 +27,38 @@ function App() {
     }
   }
 
+
   const handlePreparing = recipe_id=> {
     const newCook = cookingDetails.filter(cookingDetail => cookingDetail.recipe_id !== recipe_id);
     setCookingDetails(newCook);
-    if(!newCook){
-      const cooker = [...currentCookings, recipe_id];
-      setCurrentCooking(cooker);
-    }
+    console.log(newCook);
   }
 
+  
+const handleCurrentCook = (recipe_id) => {
+  const removedCookingDetail = cookingDetails.find(cookingDetail => cookingDetail.recipe_id === recipe_id);
+
+  if (removedCookingDetail) {
+    const newCurrentCooking = [...currentCooking, removedCookingDetail];
+    setCurrentCooking(newCurrentCooking);
+    console.log(newCurrentCooking); 
+  } 
+};
 
   return (
     <>
       <Navbar></Navbar>
       <Banner></Banner>
       <RecipeTitle></RecipeTitle>
-      <div className='md:flex gap-10'>
+      <main className='md:flex gap-10'>
+        <div className='md:w-3/5'>
         <Recipes handleAddToCook={handleAddToCook}></Recipes>
-        <CookingDetails cookingDetails={cookingDetails} handlePreparing={handlePreparing} ></CookingDetails>
-      </div>
+        </div>
+        <div className='md:w-2/5 border-2'>
+        <CookingDetails cookingDetails={cookingDetails} handlePreparing={handlePreparing} handleCurrentCook={handleCurrentCook}></CookingDetails>
+        <CurrentCooking currentCooking={currentCooking} handleCurrentCook={handleCurrentCook} handlePreparing={handlePreparing}></CurrentCooking>
+        </div>
+      </main>
       <ToastContainer />
     </>
   );

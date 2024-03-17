@@ -1,13 +1,12 @@
 import PropTypes from 'prop-types';
 import CookingDetail from '../CookingDetail/CookingDetail';
-import CurrentCooking from '../CurrentCooking/CurrentCooking';
 
 
-const CookingDetails = ({ cookingDetails, handlePreparing }) => {
+const CookingDetails = ({ cookingDetails, handlePreparing , handleCurrentCook}) => {
     
 
     return (
-        <div className="md:w-2/5 p-5 border-2">
+        <div className="p-5">
             <h2 className='font-lexend font-semibold text-2xl text-center mb-2'>Want to cook: {cookingDetails.length}</h2>
             <hr />
             <table className='font-firaSans font-medium w-full mt-2'>
@@ -20,16 +19,16 @@ const CookingDetails = ({ cookingDetails, handlePreparing }) => {
                 </tbody>
             </table>
             {
-                cookingDetails.map((cookingDetail, idx) => <CookingDetail key={idx} idx={idx} cookingDetail={cookingDetail} handlePreparing={handlePreparing}></CookingDetail>)
+                cookingDetails.map((cookingDetail, idx) => <CookingDetail key={idx} idx={idx} cookingDetail={cookingDetail} handlePreparing={handlePreparing} handleCurrentCook={handleCurrentCook}></CookingDetail>)
             }
-
-            <CurrentCooking handlePreparing={handlePreparing}></CurrentCooking>
         </div>
     );
 };
+
 CookingDetails.propTypes = {
     cookingDetails: PropTypes.array,
     handlePreparing: PropTypes.func,
+    handleCurrentCook: PropTypes.func
 }
 
 
