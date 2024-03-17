@@ -3,7 +3,7 @@
 const Banner = () => {
     return (
         <div className="relative mb-20">
-            <img src="/src/assets/Image/Rectangle 1.png" alt="Banner Image" />
+            <img src="/Rectangle 1.png" alt="Banner Image" />
 
             <div className="text-center absolute space-y-3 md:top-1/2 md:left-1/2  transform md:-translate-x-1/2 md:-translate-y-1/2">
                 <h1 className="font-lexend font-bold text-5xl text-white">Find a Personalized Cooking Class Perfectly Suited to You!</h1>
@@ -14,7 +14,7 @@ const Banner = () => {
                 </div>
             </div>
         </div>
-    );
-};
+    )
+}
 
 export default Banner;

@@ -1,5 +1,6 @@
 import { IoIosSearch } from "react-icons/io";
 import { CgProfile } from "react-icons/cg";
+
 const Navbar = () => {
     return (
         <nav className="flex justify-between items-center mb-10">
@@ -25,6 +26,6 @@ const Navbar = () => {
             </div>
         </nav>
     );
-};
+}
 
 export default Navbar;

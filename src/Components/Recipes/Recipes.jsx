@@ -11,6 +11,7 @@ const Recipes = ({handleAddToCook}) => {
             .then(res => res.json())
             .then(data => setRecipes(data))
     }, [])
+    
     return (
         <div className="md:w-3/5 grid grid-cols-1 lg:grid-cols-2 gap-5">
             {

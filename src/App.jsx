@@ -3,8 +3,8 @@ import './App.css'
 import CookingDetails from './Components/CookingDetails/CookingDetails'
 import Navbar from './Components/Navbar/Navbar'
 import Recipes from './Components/Recipes/Recipes'
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import Banner from './Components/Banner/Banner'
 import RecipeTitle from './Components/RecipeTitle/RecipeTitle'
 
@@ -35,8 +35,6 @@ function App() {
   }
 
 
-
-
   return (
     <>
       <Navbar></Navbar>
@@ -48,7 +46,7 @@ function App() {
       </div>
       <ToastContainer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 const CookingDetail = ({ handlePreparing, cookingDetail, idx }) => {
     const { recipe_name, preparing_time, calories } = cookingDetail;
-    
 
 
     return (
