@@ -2,7 +2,7 @@ import { IoIosSearch } from "react-icons/io";
 import { CgProfile } from "react-icons/cg";
 const Navbar = () => {
     return (
-        <nav className="flex justify-between items-center">
+        <nav className="flex justify-between items-center mb-10">
             <div>
             <h1 className="font-lexend font-bold text-3xl">Recipe Calories</h1>
             </div>
