@@ -9,6 +9,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [cookingDetails, setCookingDetails] = useState([]);
+  const [currentCookings, setCurrentCooking] =useState([]);
+
 
   const handleAddToCook = recipe => {
     const isExist = cookingDetails.find(cookingDetail => cookingDetail.recipe_id == recipe.recipe_id);
@@ -21,6 +23,16 @@ function App() {
     }
   }
 
+  const handlePreparing = recipe_id=> {
+    const newCook = cookingDetails.filter(cookingDetail => cookingDetail.recipe_id !== recipe_id);
+    setCookingDetails(newCook);
+    if(!newCook){
+      const cooker = [...currentCookings, recipe_id];
+      setCurrentCooking(cooker);
+    }
+  }
+
+
 
 
   return (
@@ -28,7 +40,7 @@ function App() {
       <Navbar></Navbar>
       <div className='md:flex gap-10'>
         <Recipes handleAddToCook={handleAddToCook}></Recipes>
-        <CookingDetails cookingDetails={cookingDetails}></CookingDetails>
+        <CookingDetails cookingDetails={cookingDetails} handlePreparing={handlePreparing} ></CookingDetails>
       </div>
       <ToastContainer />
     </>
