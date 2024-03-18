@@ -28,7 +28,7 @@ const Recipe = ({ recipe, handleAddToCook }) => {
                     <p>{calories}</p>
                 </div>
             </div>
-            <button onClick={ () => handleAddToCook(recipe)} className="font-lexend font-medium text-xl bg-[#0BE58A] rounded-3xl p-2 px-4">Want to Cook</button>
+            <button onClick={ () => handleAddToCook(recipe)} className="font-lexend font-medium text-xl bg-[#0BE58A] hover:bg-[#a1a8a4]  rounded-3xl p-2 px-4">Want to Cook</button>
         </div>
     );
 };

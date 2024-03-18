@@ -3,12 +3,12 @@ import { CgProfile } from "react-icons/cg";
 
 const Navbar = () => {
     return (
-        <nav className="flex justify-between items-center mb-10">
+        <nav className="flex flex-col lg:flex-row justify-between items-center mb-10">
             <div>
             <h1 className="font-lexend font-bold text-3xl">Recipe Calories</h1>
             </div>
             <div className="font-lexend">
-                <ul className="flex gap-10">
+                <ul className="flex gap-5 lg:gap-10">
                     <li>Home</li>
                     <li>Recipes</li>
                     <li>About</li>

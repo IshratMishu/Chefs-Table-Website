@@ -13,6 +13,8 @@ import CurrentCooking from './Components/CurrentCooking/CurrentCooking'
 function App() {
   const [cookingDetails, setCookingDetails] = useState([]);
   const [currentCooking, setCurrentCooking] =useState([]);
+  const [totalTime, setTotalTime] = useState(0);
+  const [totalCalories, setTotalCalories] = useState(0);
   
 
 
@@ -34,15 +36,28 @@ function App() {
     console.log(newCook);
   }
 
-  
+
+const timeTable = preparing_time=>{
+    setTotalTime(totalTime + preparing_time);
+  }
+
+  const sumOfCalories = calories =>{
+    setTotalCalories(totalCalories+ calories)
+  }
+
 const handleCurrentCook = (recipe_id) => {
   const removedCookingDetail = cookingDetails.find(cookingDetail => cookingDetail.recipe_id === recipe_id);
 
   if (removedCookingDetail) {
     const newCurrentCooking = [...currentCooking, removedCookingDetail];
     setCurrentCooking(newCurrentCooking);
-    console.log(newCurrentCooking); 
+    console.log(newCurrentCooking);
+    const preparingTimeFloat = parseFloat(removedCookingDetail.preparing_time);
+    timeTable(preparingTimeFloat); 
+    const sumOfCaloriesFloat = parseFloat(removedCookingDetail.calories) ;
+    sumOfCalories(sumOfCaloriesFloat);
   } 
+  
 };
 
   return (
@@ -54,9 +69,9 @@ const handleCurrentCook = (recipe_id) => {
         <div className='md:w-3/5'>
         <Recipes handleAddToCook={handleAddToCook}></Recipes>
         </div>
-        <div className='md:w-2/5 border-2'>
+        <div className='md:w-2/5 border-2 shadow-2xl rounded-2xl'>
         <CookingDetails cookingDetails={cookingDetails} handlePreparing={handlePreparing} handleCurrentCook={handleCurrentCook}></CookingDetails>
-        <CurrentCooking currentCooking={currentCooking} handleCurrentCook={handleCurrentCook} handlePreparing={handlePreparing}></CurrentCooking>
+        <CurrentCooking totalCalories={totalCalories} totalTime={totalTime} currentCooking={currentCooking} handleCurrentCook={handleCurrentCook} handlePreparing={handlePreparing}></CurrentCooking>
         </div>
       </main>
       <ToastContainer />

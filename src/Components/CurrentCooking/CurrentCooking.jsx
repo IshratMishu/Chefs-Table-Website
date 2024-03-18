@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import SingleCook from '../SingleCook/SingleCook';
 
-const CurrentCooking = ({ currentCooking, handleCurrentCook }) => {
+const CurrentCooking = ({ totalCalories, totalTime, currentCooking, handleCurrentCook }) => {
 
     return (
         <div className='p-5'>
@@ -16,17 +16,26 @@ const CurrentCooking = ({ currentCooking, handleCurrentCook }) => {
                 </tbody>
             </table>
             {
-                //  currentCooking.map((cookingDetail, idx) => <CookingDetail key={idx} idx={idx} cookingDetail={cookingDetail} handlePreparing={handlePreparing} handleCurrentCook={handleCurrentCook}></CookingDetail>)
-                currentCooking.map((singleCook, idx) => <SingleCook key={idx} idx={idx} 
-                singleCook={singleCook} handleCurrentCook={handleCurrentCook}></SingleCook>)
+                currentCooking.map((singleCook, idx) => <SingleCook key={idx} idx={idx}
+                    singleCook={singleCook} handleCurrentCook={handleCurrentCook}></SingleCook>)
             }
+
+            <table className='font-firaSans font-medium w-full mt-10'>
+                <tbody className='flex justify-between'>
+                    <td></td>
+                    <td className='w-1/4'></td>
+                    <td className='w-1/4'>Total Time={totalTime}</td>
+                    <td className='w-1/4'>Total Calories={totalCalories}</td>
+                </tbody>
+            </table>
         </div>
     );
 };
 CurrentCooking.propTypes = {
     currentCooking: PropTypes.array,
-    handleCurrentCook: PropTypes.func
-    // handlePreparing: PropTypes.func
+    handleCurrentCook: PropTypes.func,
+    totalTime: PropTypes.number,
+    totalCalories: PropTypes.number
 }
 
 export default CurrentCooking;

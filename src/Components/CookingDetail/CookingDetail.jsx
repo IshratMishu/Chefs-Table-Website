@@ -21,7 +21,7 @@ const CookingDetail = ({handlePreparing, cookingDetail, idx, handleCurrentCook})
                 handlePreparing(cookingDetail.recipe_id)
                 handleCurrentCook(cookingDetail.recipe_id)
             }}  
-            className='bg-[#0BE58A] px-2 rounded-xl text-black font-semibold font-lexend ml-2'>Preparing</button>
+            className='bg-[#0BE58A] hover:bg-[#a1a8a4] px-2 rounded-xl text-black font-semibold font-lexend ml-2'>Preparing</button>
         </div>
     );
 };
