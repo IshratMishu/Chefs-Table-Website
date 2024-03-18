@@ -45,7 +45,7 @@ function App() {
 
   // totalCalories calc
   const sumOfCalories = calories => {
-    setTotalCalories(totalCalories + calories)
+    setTotalCalories(totalCalories + calories);
   }
 
   // Show data on currently cooking by click preparing Button and total calc
@@ -55,7 +55,6 @@ function App() {
     if (removedCookingDetail) {
       const newCurrentCooking = [...currentCooking, removedCookingDetail];
       setCurrentCooking(newCurrentCooking);
-      // console.log(newCurrentCooking);
 
       const sumOfTimeFloat = parseFloat(removedCookingDetail.preparing_time);
       sumOfTime(sumOfTimeFloat);
