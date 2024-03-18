@@ -5,7 +5,7 @@ const Navbar = () => {
     return (
         <nav className="flex flex-col lg:flex-row justify-between items-center mb-10">
             <div>
-            <h1 className="font-lexend font-bold text-3xl">Recipe Calories</h1>
+                <h1 className="font-lexend font-bold text-3xl">Recipe Calories</h1>
             </div>
             <div className="font-lexend">
                 <ul className="flex gap-5 lg:gap-10">
@@ -17,11 +17,11 @@ const Navbar = () => {
             </div>
             <div className="flex items-center gap-2">
                 <div className="flex items-center">
-                <div className="p-2"><IoIosSearch /></div>
+                    <div className="p-2"><IoIosSearch /></div>
                     <input className="rounded-2xl p-1 border-2 border-gray-400" type="text" placeholder="Search" />
                 </div>
                 <div className="bg-[#0BE58A] rounded-full p-2">
-                <CgProfile />
+                    <CgProfile />
                 </div>
             </div>
         </nav>

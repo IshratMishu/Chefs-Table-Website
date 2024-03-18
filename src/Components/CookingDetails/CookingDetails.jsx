@@ -2,8 +2,7 @@ import PropTypes from 'prop-types';
 import CookingDetail from '../CookingDetail/CookingDetail';
 
 
-const CookingDetails = ({ cookingDetails, handlePreparing , handleCurrentCook}) => {
-    
+const CookingDetails = ({ cookingDetails, handlePreparing, handleCurrentCook }) => {
 
     return (
         <div className="p-5">
@@ -11,11 +10,11 @@ const CookingDetails = ({ cookingDetails, handlePreparing , handleCurrentCook}) 
             <hr />
             <table className='font-firaSans font-medium w-full mt-2'>
                 <tbody className='flex justify-between'>
-                        <td className='w-1/12'></td>
-                        <td className='w-1/4'>Name</td>
-                        <td className='w-1/4'>Time</td>
-                        <td className='w-1/4'>Calories</td>
-                        <td className='w-1/4'></td>
+                    <td className='w-1/12'></td>
+                    <td className='w-1/4'>Name</td>
+                    <td className='w-1/4'>Time</td>
+                    <td className='w-1/4'>Calories</td>
+                    <td className='w-1/4'></td>
                 </tbody>
             </table>
             {

@@ -14,21 +14,21 @@ const Recipe = ({ recipe, handleAddToCook }) => {
             <div>
                 <h2 className="font-lexend font-medium text-lg text-[#282828]">Ingredients: {ingredients.length}</h2>
                 {
-                    ingredients.map((ingredient,idx) => <li key={idx} className="font-firaSans text-[#878787] leading-8 text-lg">{ingredient}</li>)
+                    ingredients.map((ingredient, idx) => <li key={idx} className="font-firaSans text-[#878787] leading-8 text-lg">{ingredient}</li>)
                 }
             </div>
             <hr />
             <div className="font-firaSans text-[#282828] flex gap-10">
                 <div className="flex gap-2 items-center">
-                <IoTimeOutline />
+                    <IoTimeOutline />
                     <p>{preparing_time}</p>
                 </div>
                 <div className="flex gap-2 items-center">
-                <RiFireLine />
+                    <RiFireLine />
                     <p>{calories}</p>
                 </div>
             </div>
-            <button onClick={ () => handleAddToCook(recipe)} className="font-lexend font-medium text-xl bg-[#0BE58A] hover:bg-[#a1a8a4]  rounded-3xl p-2 px-4">Want to Cook</button>
+            <button onClick={() => handleAddToCook(recipe)} className="font-lexend font-medium text-xl bg-[#0BE58A] hover:bg-[#a1a8a4]  rounded-3xl p-2 px-4">Want to Cook</button>
         </div>
     );
 };
